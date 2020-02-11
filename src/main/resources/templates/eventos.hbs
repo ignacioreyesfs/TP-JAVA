@@ -1,0 +1,71 @@
+{{#partial "content"}}
+<link href="../css/home.css" rel="stylesheet">
+<link href="../css/eventos.css" rel="stylesheet">
+
+
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+        <div class="left">
+            <a href="#" class="link back">
+                <i class="icon icon-back"></i>
+            </a>
+        </div>
+        <div class="title">
+            <font size="6" font color="white">Crear Evento</font>
+        </div>
+    </div>
+</div>
+<div class="page-content">
+    <div class="block">
+    </div>
+    <form method="post" action="/eventos" class="list form-store-data" id="demo-form">
+        <ul>
+            <div class="container">
+                <form id="regForm">
+                    <div class="form-group">
+
+                        <label for="nombre">
+                            <font color="white">Nombre</font>
+                        </label>
+                        <input name="nombreElegido" type="text" class="form-control" placeholder="Ingresa el nombre del evento" required>
+                    </div>
+
+                    <div class="item-inner">
+                        <div class="form-group">
+
+                            <label for="nombre">
+                                <font color="white">Fecha</font>
+                            </label>
+
+                            <div class="item-input-wrap">
+                                <input name="fecha" class="form-control" type="datetime-local" min={{fechaMin}} placeholder="Seleccione una fecha..." required>
+                            </div>
+                        </div>
+
+                        <div class="item-inner">
+
+                            <label for="guardarropa">
+                                <font color="white">Guardarropas</font>
+                            </label>
+
+                            <div class="item-input-wrap">
+                                <select id="seleccionarGuardarropas" name="seleccionarGuardarropas" class="form-control" multiple required>
+                                	{{#each guardarropas}}
+                                    <option value="{{this.id}}">{{this.nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+						            <br>
+                        <div class="form-group">
+                            <input type="submit" type="submit" class="btn btn-primary" value="Submit" />
+                            <input type="reset" class="btn btn-default" value="Reset form">
+                        </div>
+
+        </ul>
+        </form>
+        </div>
+        </div>
+        {{/partial}}
+         {{> layout.hbs }}

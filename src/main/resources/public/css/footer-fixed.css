@@ -1,0 +1,18 @@
+footer {
+    width:100%;
+    bottom: 0px;
+    position: fixed;
+}
+
+.top-bot-buffer-evento {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.left-buffer-column-evento{
+	margin-left:50px;
+}
+
+.left-buffer-column-date{
+	margin-left:20px;
+}

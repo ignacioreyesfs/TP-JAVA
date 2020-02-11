@@ -1,0 +1,30 @@
+{{#partial "content"}}
+<link href="../../css/home.css" rel="stylesheet">
+<link href="../../css/aceptar-sugerencia.css" rel="stylesheet">
+<html>
+<body>
+	<div class = "container">
+    	<div class="row justify-content-md-center">
+	    	<h2 style="color:white;"><br>Seleccione una sugerencia para poder ver las prendas</h2>
+	    </div>
+	   	{{#each sugerencias}}
+	    	<div class="row top-bot-buffer-sugerencia">
+              
+              <div class="column">
+              	<a href="/eventos/{{idEvento}}/sugerencias/{{this.id}}/atuendos/{{this.atuendo.id}}"> SUGERENCIA ID {{this.id}}</a>
+              </div>
+              
+              <div class="column left-buffer-column-sugerencia">
+	          	<form action="/eventos/{{idEvento}}/sugerencias/{{this.id}}" method="PUT">
+	          		<input type="submit" value="Aceptar"/>
+	         	</form>
+              </div>
+              
+              
+        	</div>
+        {{/each}}
+	</div>
+</body>
+</html>
+{{/partial}}
+{{> layout.hbs }}

@@ -1,0 +1,21 @@
+body {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/prendas-sugerencia.jpg');
+    background-size: cover;
+}
+
+.top-bot-buffer {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.top-buffer-ropa{
+	margin-top:20px;
+	margin-left:20px;
+	color:white;
+}
+
+footer {
+    width:100%;
+    bottom: 0px;
+    position: fixed;
+}

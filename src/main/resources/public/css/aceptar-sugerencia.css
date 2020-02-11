@@ -1,0 +1,24 @@
+body {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/elegir-sugerencia.jpg');
+    background-size: cover;
+}
+
+
+.top-bot-buffer-sugerencia {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.left-buffer-column-sugerencia{
+	margin-left:50px;
+}
+
+.left-buffer-column-date{
+	margin-right:20px;
+}
+
+footer {
+    width:100%;
+    bottom: 0px;
+    position: fixed;
+}

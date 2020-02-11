@@ -1,0 +1,67 @@
+{{#partial "content"}}
+<link href="../../../css/home.css" rel="stylesheet">
+<link href="../../../css/prenda.css" rel="stylesheet" type="text/css">
+
+
+    <script>
+$(function () {
+    $('#checkbox-color-unico').change(function () {
+        $("#div-color-secundario").toggle(!this.checked);
+        $("#input-color-unico").val(String(this.checked));
+    }).change();
+});
+	</script>
+	
+	<html>
+<body>
+
+
+  	
+
+<div class="page">
+     	<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 16%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">1</div>
+</div>
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+ 
+      		<div class="title">
+      		
+       			<font size="6" font color="black">Tipo de la prenda</font>
+      		</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+    </div>
+	
+    	    	
+    	<form action="/guardarropas/{{idGuardarropa}}/prendas/nombre" method="GET" >
+    		<select name="tipoPrenda">
+    			{{#each tiposPrenda}}
+					<option value={{this}}>{{this.nombre}}</option>
+   				{{/each}}
+   			</select>
+   		
+   			<input class="btn btn-primary" type="submit" value="Siguiente"><br>
+   			
+   			  {{#if error}}
+   			<br><div class="alert alert-danger">{{error}}</div><br>
+   			  {{/if}}
+
+		</form>
+    </div>
+</div>
+<br>
+
+<body>
+</html>
+
+
+{{/partial}}
+{{> layout.hbs }}

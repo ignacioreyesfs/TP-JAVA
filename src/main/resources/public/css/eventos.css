@@ -1,0 +1,11 @@
+body {
+    background-image: url('../img/calendar.jpg');
+    background-size: cover;
+    display:flex; 
+  	flex-direction:column;
+}
+
+footer {
+    height:80px;
+	margin-top:auto;
+}

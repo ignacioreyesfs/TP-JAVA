@@ -1,0 +1,75 @@
+{{#partial "content"}}
+<link href="../css/home.css" rel="stylesheet">
+<link href="../css/guardarropas.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+
+<head>
+    <title>QueMePongo - Tus Guardarropas</title>
+</head>
+
+<head>
+    <script>
+		function toggleTabla(nombre){
+			$(nombre).toggle(100);
+			return false;
+		};
+	</script>
+</head>
+
+
+
+<body>
+	<div align="center">
+		<h1><b>Tus Guardarropas</b></h1>
+		<p class="card-text"><b><i>Visualiza su contenido en un solo lugar</i></b></p>
+		<br></br>
+	</div>
+	<div class="container">
+	  {{#each guardarropasUsuario}}
+      	
+		<div class="row">
+			<p><b><kbd>{{this.nombre}}</kbd></b></p>
+			<span>&nbsp;</span>
+            <form action="/guardarropas/{{this.id}}/prendas/tipo" method="GET">
+            <button style="display: inline;" type="button" onclick="toggleTabla('#{{this.id}}')" class="btn btn-secondary btn-sm">Mostrar/Ocultar prendas</button>
+				<input style="display: inline;" type="submit" class="btn btn-primary btn-sm" value="Agregar prenda" />
+			</form>		
+			<table class="table" id="{{this.id}}" style="display:none;">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nombre</th>
+						<th scope="col">Tipo</th>
+						<th scope="col">Material</th>
+					</tr>
+				</thead>
+				<tbody>
+               {{#each this.prendas}}
+               
+					<tr>
+						<th scope="row">{{@index}}</th>
+						<td>{{this.nombre}}</td>
+						<td>{{this.tipoPrenda}}</td>
+						<td>{{this.material}}</td>
+					</tr>
+               {{/each}}					
+            
+				</tbody>
+			</table>
+		</div>
+      {{/each}}
+   
+	</div>
+</body>
+
+
+
+</html>
+{{/partial}}
+{{> layout.hbs }}

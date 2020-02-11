@@ -1,0 +1,88 @@
+{{#partial "content"}}
+<link href="../../../css/home.css" rel="stylesheet">
+<link href="../../../css/prenda.css" rel="stylesheet">
+
+
+    <script>
+$(function () {
+    $('#checkbox-color-unico').change(function () {
+        $("#div-color-secundario").toggle(!this.checked);
+        $("#input-color-unico").val(String(this.checked));
+    }).change();
+});
+	</script>
+	
+<div class="page">
+     	<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">5</div>
+</div>
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+ 
+      		<div class="title">
+      		
+       			<font size="6" font color="black">Colores de la prenda</font>
+      		</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+    </div>
+	
+
+<br>
+       	<form action="/guardarropas/{{idGuardarropa}}/prendas/confirmacion" method="GET" class="list form-store-data" id="demo-form">
+      <ul>
+        
+        <div class="container">
+    	<form id="regForm">
+        <div class="form-group">
+ 			<label for="nombre">
+ 				<font color="black">Mi prenda tiene un único color</font>
+ 			</label>
+    	
+	    		 <input type="checkbox" id="checkbox-color-unico" name="checkbox-color-unico" class="checkbox-color-unico"><br>
+    	 			<label>
+ 				<font color="black">Color primario</font>
+ 			</label>
+    		<input type="color" name="color-primario" id="color-primario" value={{colorPrimario}}>
+    		<br>
+    		<div id="div-color-secundario">
+    	 			<label>
+ 				<font color="black">Color secundario</font>
+ 			</label>
+ 			  <input type="color" name="color-secundario" id="color-secundario" value={{colorSecundario}}>
+ 			      			<input type="hidden" name="input-color-unico" id="input-color-unico" value="false" >
+    		 </div>    	</div>
+           			  
+   			  
+   			  {{#if error}}
+   			<div class="alert alert-danger">{{error}}</div>
+   			  {{/if}}
+        <div class="item-inner">
+        <div class="form-group">
+           		
+        </div>
+        
+        <div class="item-inner">
+  			
+  		<div class="item-input-wrap">
+  		</div>
+		</div>
+        <br>
+      	<div class="form-group">
+   				<input type="submit" button type="submit" class="btn btn-primary" value="Siguiente"/>
+        </div>
+        
+      </ul>
+    </form>
+  </div>
+</div>
+{{/partial}}
+{{> layout.hbs }}
+

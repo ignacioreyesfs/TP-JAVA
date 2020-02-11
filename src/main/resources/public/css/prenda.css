@@ -1,0 +1,39 @@
+body {
+    background-image: url('../img/ropa.jpg');
+    background-size: cover;
+}
+
+h1{
+color:black;
+  text-align: center;
+font-family:'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+label{
+font-family:'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+
+}
+
+.div-error{
+color:red;
+font-family:'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+
+}
+
+.checkbox-color-unico{
+font-family:'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+
+}
+
+
+selection{
+width:80%;
+color:blue;
+}
+
+footer {
+    width:100%;
+    bottom: 0px;
+    position: fixed;
+}
+

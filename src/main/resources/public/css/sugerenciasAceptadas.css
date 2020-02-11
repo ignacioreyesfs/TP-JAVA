@@ -1,0 +1,98 @@
+body {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/sugerenciasAceptadas.jpg');
+    background-size: cover;
+    display:flex; 
+  	flex-direction:column;
+}
+
+.top-bot-buffer {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.top-buffer-ropa{
+	margin-top:20px;
+	margin-left:20px;
+	color:white;
+}
+
+.invert{
+    filter: brightness(0) invert(1);
+}
+
+
+.table,
+.table tr,
+.table td {
+    background-color: white !important;
+}
+
+.options {
+    margin-bottom: 40px;
+}
+
+footer {
+    height:80px;
+	margin-top:auto;
+}
+
+li#li-sugerencia {
+	display: inline-block;
+	background: rgba(0, 0, 0, 0.4);
+	margin:20px;
+	width: 400px;
+	padding: 5px;
+}
+
+i{
+height: 48px;
+width: 48px;	
+}
+
+
+/* HIDE RADIO */
+[type=radio] { 
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + i {
+	cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + i {
+	color: greenyellow;
+  }
+
+  .fas:not(.icono-prenda){
+	  position: absolute;
+	  color: white;
+  }
+
+  .col-nombre{
+	  width: 50px;
+  }
+
+  #ul-sugerencia{
+	  width: 100%;
+	  padding-right: 5%;
+	  padding-left: 5%;
+  }
+
+  #container {
+    min-width: 95%;
+}
+
+.icono-prenda{
+	color: #428bca;
+}
+
+#p-titulo{
+	font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+	color: white;
+	font-weight: bold;
+}

@@ -1,0 +1,70 @@
+{{#partial "content"}}
+<link href="../../../../../css/home.css" rel="stylesheet">
+<link href="../../../../../css/prendas-sugerencia.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="../../../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<html>
+<body>
+
+	<div class="container">
+		<div class ="row top-bot-buffer">
+			<i class="fab fa-redhat fa-6x"></i>
+			{{#each atuendo.cabeza}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>		
+			{{/each}}
+		</div>
+		
+		<div class ="row top-bot-buffer">
+			<i class="fab fa-black-tie fa-6x"></i>
+			{{#each atuendo.cuello}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>
+			{{/each}}
+		</div>
+		
+		<div class ="row top-bot-buffer">
+			<i class="fas fa-tshirt fa-6x"></i>
+			{{#each atuendo.superior}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>
+			{{/each}}
+		</div>
+		
+		<div class ="row top-bot-buffer">
+			<i class="fas fa-mitten fa-6x"></i>
+			{{#each atuendo.manos}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>
+			{{/each}}
+		</div>
+		
+		<div class ="row top-bot-buffer">
+			<i class="material-icons" style="font-size: 100px">airline_seat_legroom_extra</i>
+			{{#each atuendo.inferior}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>
+			{{/each}}
+		</div>
+		
+		<div class ="row top-bot-buffer">
+			<i class="fas fa-shoe-prints fa-6x"></i>
+			{{#each atuendo.calzado}}
+				<div class="col">
+					<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+				</div>
+			{{/each}}
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+{{/partial}}
+{{> layout.hbs }}

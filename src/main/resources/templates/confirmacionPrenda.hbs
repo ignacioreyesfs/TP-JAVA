@@ -1,0 +1,74 @@
+{{#partial "content"}}
+<link href="../../../css/home.css" rel="stylesheet">
+<link href="../../../css/prenda.css" rel="stylesheet">
+
+<head>
+	<script>
+	function operacionExitosa(){
+		alert("Creacion exitosa!");
+	}
+	</script>
+</head>
+
+<div class="page">
+     	<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">6</div>
+</div>
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+        </a>
+      </div>
+ 
+      		<div class="title">
+      		
+       			<font size="6" font color="black">Revise los datos</font>
+      		</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+    </div>
+	
+
+<br>
+    <form action="/guardarropas/{{idGuardarropa}}/prendas" method="POST"class="list form-store-data" id="demo-form">
+      <ul>
+        
+        <div class="container">
+    	<form id="regForm">
+        <div class="form-group" style="float: left;">
+
+    	<label>  <font color="black">Nombre:</font><br>
+    	<label>  <font color="black">{{nombrePrenda}}</font><br><br>
+    	
+    	<label>  <font color="black">Tipo de prenda:</font><br>
+    	<label>  <font color="black">{{tipoPrenda}}</font><br><br>
+
+    	<label>  <font color="black">Material:</font>   <br>
+       	<label>  <font color="black">{{materialPrenda}}</font><br><br>
+       	
+    	<label>  <font color="black">Colores:</font><br>
+       	<input type="color" value={{colorPrimario}} disabled><br>
+       	<input type="color" value={{colorSecundario}} disabled><br><br>
+       	
+
+    	
+
+    	</div>
+        
+     
+       
+      	<div class="form-group" style="float: left;">
+      	       	<img src={{imagenPrenda}} alt="No se puede mostrar la foto" height=150 width=150 style="margin-left: 36px;">
+   				<input type="submit" onclick="operacionExitosa()" type="submit" class="btn btn-primary" value="Crear prenda"/>
+        </div>
+        
+      </ul>
+    </form>
+  </div>
+</div>
+{{/partial}}
+{{> layout.hbs }}

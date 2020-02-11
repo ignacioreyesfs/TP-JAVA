@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>queMePongo.usuario.Usuario</class>
+        <class>queMePongo.prenda.Sugerencia</class>
+        <class>queMePongo.evento.Evento</class>
+        <class>queMePongo.evento.EventoConFecha</class>
+        <class>queMePongo.prenda.Guardarropa</class>
+        <class>queMePongo.prenda.Prenda</class>
+        <class>queMePongo.prenda.Atuendo</class>
+        <class>queMePongo.clima.ProveedorClima</class>
+        <class>queMePongo.clima.ClimaAccuweather</class>
+        <class>queMePongo.clima.ClimaOWM</class>
+        <class>queMePongo.usuario.Sensibilidad</class>
+        <class>queMePongo.notificaciones.NotificadorObserver</class>
+        <class>queMePongo.notificaciones.MailConcreteObserver</class>
+        <class>queMePongo.notificaciones.WhatsAppConcreteObserver</class>
+		
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class"/>
+
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://bd9ae7244b865b:694c497d@us-cdbr-iron-east-05.cleardb.net/heroku_3563688f0306d65?autoReconnect=true" />
+            <property name="hibernate.connection.username" value="bd9ae7244b865b" />
+            <property name="hibernate.connection.password" value="694c497d" />
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="use_sql_comments" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="none" />
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

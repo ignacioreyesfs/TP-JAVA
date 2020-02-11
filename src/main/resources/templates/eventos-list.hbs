@@ -1,0 +1,31 @@
+{{#partial "content"}}
+<link href="../css/home.css" rel="stylesheet">
+<link href="../css/evento-list.css" rel="stylesheet">
+
+<html>
+<body>
+	<div class = "container">
+    	<div class="row justify-content-md-center">
+        	<h2 style="color:white;"><br>Seleccione un evento para ver sugerencias</h2>
+        </div>
+        {{#each eventos}}
+        	<div class="row top-bot-buffer-evento">
+        	
+        		<div class="column">
+        			<p><b><a href="/eventos/{{this.id}}/sugerencias"> {{this.nombre}} </a></b></p>	
+        		</div>
+        		
+        		<div class="column left-buffer-column-evento">
+        			<i class="fas fa-clock fa-2x" style="color:white;"></i>
+        		</div>
+        		
+        		<div class="column left-buffer-column-date">
+        			<p style="color:white;"><b>{{this.fecha}}</b></p>    		
+        		</div>      	
+        	</div>
+        {{/each}}
+		</div>
+</body>
+</html>
+{{/partial}}
+{{> layout.hbs }}

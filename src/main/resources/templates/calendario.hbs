@@ -1,0 +1,55 @@
+{{#partial "content"}}
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--Roboto regular font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/calendario.css" rel="stylesheet">
+
+    <script src="../js/handlebars-v4.0.12.js"></script>
+    <!--jQuery-->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/calendario.js"></script>
+
+    <title>Calendario</title>
+
+        <body>
+        <div class = "container">
+        
+        	<div class="row justify-content-md-center">
+        		<div class="column">
+        			<h2><br>Eventos próximos</h2>
+        		</div>
+        		<div class="column top-left-botton">
+        			<a href="/eventos/nuevoEvento" class="btn btn-primary">Añadir evento</a>
+        		</div>
+        	</div>
+        
+        	{{#each eventos}}
+        	<div class="row top-bot-buffer-evento">
+        	
+        		<div class="column">
+        			<p><b>{{this.nombre}}</b></p>	
+        		</div>
+        		
+        		<div class="column left-buffer-column-evento">
+        			<i class="fas fa-clock fa-2x"></i>
+        		</div>
+        		
+        		<div class="column left-buffer-column-date">
+        			<p><b>{{this.fecha}}</b></p>    		
+        		</div>      	
+        	</div>
+        	{{/each}}
+        
+        
+        </div>
+        </body>
+
+{{/partial}}
+{{> layout.hbs }}

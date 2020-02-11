@@ -1,0 +1,46 @@
+body {
+    background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: #343a40 !important;
+  color: #fcbd20;
+}
+
+.top-left-botton {
+	margin-left:20px;
+	margin-top:40px;
+}
+
+.top-bot-buffer-evento {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.left-buffer-column-evento{
+	margin-left:50px;
+}
+
+.left-buffer-column-date{
+	margin-left:20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,257 @@
+{{#partial "content"}}
+<link href="../css/home.css" rel="stylesheet">
+<link href="../css/sugerenciasAceptadas.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+
+<head>
+    <title>QueMePongo - SUGERENCIAS ACEPTADAS</title>
+</head>
+
+<head>
+    <script>
+		function toggleTabla(id){
+			$(id).toggle(100);
+			return false;
+		};
+		
+		function operacionExitosa(){
+			alert("Calificacion exitosa!");
+		}
+	</script>
+</head>
+
+
+
+<body>
+	<div align="center">
+		<h1 style="color:white;"><b>SUGERENCIAS ACEPTADAS</b></h1>
+		<p class="card-text" style="color:white;"><b><i>Revisá y calificá tus desiciones</i></b></p>
+		<br></br>
+	</div>
+	<div class="container" id="container">
+		<div class="row">
+			<p class="card-text" style="color:white;"><u>Sugerencias sin calificar:</u></p>
+		</div>
+		<ul id="ul-sugerencia">
+			{{#each sugerencias}}
+				<li id="li-sugerencia">
+					<form action="/sugerencias/aceptadas" method="POST">
+						<div class ="row top-bot-buffer">
+							<div class="col">
+							<p id="p-titulo">Sugerencia</p>
+							</div>
+							<div class="col">
+							<input type="submit" id="B{{this.id}}" onclick="operacionExitosa()" class="btn btn-primary btn-sm" value="Guardar calificacion"/>
+							</div>
+						</div>
+						
+						<input type="text" name="idSugerencia" value="{{this.id}}" hidden>
+						<div id="{{this.id}}">
+							<div class ="row top-bot-buffer">
+								<div class="col">					
+								<i class="fab fa-redhat fa-4x icono-prenda"></i>
+								</div>
+								
+								<div class="col col-nombre">
+								{{#each this.atuendo.cabeza}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+		
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCabeza" id="muyabrigado" value="ALTO" autocomplete="off">
+										<i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCabeza" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCabeza" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+		
+							</div>
+								
+							<div class ="row top-bot-buffer">
+								<div class="col">										
+								<i class="fab fa-black-tie fa-4x icono-prenda"></i>
+								</div>
+								
+								<div class="col col-nombre">
+								{{#each this.atuendo.cuello}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+								
+		
+								<div class="col">
+					  				<label>
+										  <input type="radio" name="calificacionCuello" id="muyabrigado" value="ALTO" autocomplete="off">
+										  <i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCuello" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCuello" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								
+							</div>
+							
+							<div class ="row top-bot-buffer">	
+								<div class="col">									
+								<i class="fas fa-tshirt fa-4x icono-prenda"></i>
+								</div>
+		
+								<div class="col col-nombre">
+								{{#each this.atuendo.superior}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+		
+								<div class="col">
+					  				<label>
+										  <input type="radio" name="calificacionSuperior" id="muyabrigado" value="ALTO" autocomplete="off">
+										  <i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionSuperior" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionSuperior" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								
+							</div>
+							
+							<div class ="row top-bot-buffer">	
+								<div class="col">								
+								<i class="fas fa-mitten fa-4x icono-prenda"></i>
+								</div>
+		
+								<div class="col col-nombre">
+								{{#each this.atuendo.manos}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+			
+								<div class="col">
+					  				<label>
+										  <input type="radio" name="calificacionManos" id="muyabrigado" value="ALTO" autocomplete="off">
+										  <i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionManos" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionManos" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								
+							</div>
+							
+							<div class ="row top-bot-buffer">
+								<div class="col">									
+								<i class="material-icons icono-prenda" style="font-size: 100px">airline_seat_legroom_extra</i>
+								</div>
+		
+								<div class="col col-nombre">
+								{{#each this.atuendo.inferior}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+								
+								<div class="col">
+					  				<label>
+										  <input type="radio" name="calificacionInferior" id="muyabrigado" value="ALTO" autocomplete="off">
+										  <i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionInferior" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionInferior" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								
+							</div>
+							
+							<div class ="row top-bot-buffer">	
+								<div class="col">									
+								<i class="fas fa-shoe-prints fa-4x icono-prenda"></i>
+								</div>
+								
+								<div class="col col-nombre">
+								{{#each this.atuendo.calzado}}
+									<p class="card-text top-buffer-ropa">{{this.nombre}}</p>
+								{{/each}}
+								</div>
+								
+								<div class="col">
+					  				<label>
+										  <input type="radio" name="calificacionCalzado" id="muyabrigado" value="ALTO" autocomplete="off">
+										  <i class="fas fa-sun fa-2x top-buffer-ropa"></i>
+									</label>			
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCalzado" id="ok" value="PERFECTO" checked autocomplete="off">
+										<i class="fas fa-thumbs-up fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								<div class="col">
+									<label>
+										<input type="radio" name="calificacionCalzado" id="desabrigado" value="BAJO" autocomplete="off">
+										<i class="fas fa-snowflake fa-2x top-buffer-ropa"></i>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</form>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</body>
+</html>
+{{/partial}}
+{{> layout.hbs }}

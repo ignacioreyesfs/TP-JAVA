@@ -1,0 +1,20 @@
+body {
+    background-image: url('../img/guardarropas.jpg');
+    background-size: cover;
+    display:flex; 
+  	flex-direction:column;
+}
+
+.table,
+.table tr,
+.table td {
+    background-color: white !important;
+}
+.options {
+    margin-bottom: 40px;
+}
+
+footer {
+	height:80px;
+	margin-top:auto;
+}
