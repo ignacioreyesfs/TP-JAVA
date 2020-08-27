@@ -1,7 +1,15 @@
-# Sugeridor de prendas TP JAVA DISEÑO DE SISTEMAS
-Aplicacion web QueMePongo, utilizada para obtener un atuendo adecuado para el dia, basandose en el/los guardarropa del usuario, pudiendo compartir los mismos con otros usuarios (soporte de multiples usuarios). <br />
-Las recomendaciones se realizan en base a la temperatura, teniendo en cuenta la sensibilidad del usuario frente a ella y sus preferencias de atuendos. <br />
-Se pueden agendar eventos futuros y la aplicacion notificara un dia antes del mismo los atuendos que podria utilizar. &nbsp;
-Desarrollada en Java, html y jquery, utilizando maven, hibernate y deployando con heroku
+# Sugeridor de prendas
+
+Trabajo practico desarrollado en la materia anual Diseño de Sistemas que consiste en una aplicación web desarrollada en  Java, html y jquery, utilizando maven, hibernate y deployanda con heroku.
+QueMePongo es una aplicación web que, basandose en el/los guardarropas del usuario, recomienda los atuendos ideales para el evento al que se debe asistir; para ello tiene en cuenta la formalidad del evento, el clima del día y las preferencias del usuario.
+
+## Funcionalidades
+
+ - Cargar prendas a un guardarropas.
+ - Cargar un evento, indicando la fecha del mismo.
+	 - 24hs antes del evento (utilizando asincronismo), la aplicación genera las posibles combinaciones de prendas (atuendos) ideales para la ocasión, basandose en la temperatura a la hora del evento y las elecciones pasadas del usuario.
+ - Calificar un atuendo utilizado.
+	 - Un atuendo consiste en un conjunto de prendas con distintas capas (por ejemplo, un buzo es de capa 2) dependiendo la temperatura del día. Es obligatorio que cada atuendo conste de una parte superior, inferior y calzado, pero opcional el uso de accesorios.
+	 - Calificar un atuendo consiste en indicar si el mismo le resulto adecuado para la temperatura del día. De esta manera, el algoritmo va ajustando la sensibilidad del usuario al frio/calor.
 
 
